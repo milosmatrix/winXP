@@ -124,8 +124,8 @@ class Window{
 		//HERE TODO
 		//Z-INDEX
 		//POSITION
-		this.windowElement.style.top = '100px';
-		this.windowElement.style.left = '200px';
+		this.windowElement.style.top = (Math.floor(Math.random() * 3) + 2) * 50 + 'px';
+		this.windowElement.style.left = (Math.floor(Math.random() * 3) + 2) * 50 + 'px';
 
 
 		this.windowElement.classList.add('window');

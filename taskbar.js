@@ -69,11 +69,21 @@ class Taskbar{
 		const startMenuDropDownRightPanel = document.createElement('DIV');
 		startMenuDropDownRightPanel.setAttribute('id', 'startMenuDropDownRightPanel');
 
-		[
-			{image:'social-facebook-icon.png', name:'facebook', link:'https://www.facebook.com/misatheface'},
-			{image:'', name:'codingame', link:'https://www.codingame.com/profile/228f67aeb45255c7de13fe03b1f0a8458693901'},
+		const socialLinks = [
+			{image:'social-facebook-icon.png', name:'facebook', link:'https://www.facebook.com/misatheface1'},
+			{image:'codingame.jpg', name:'codingame', link:'https://www.codingame.com/profile/228f67aeb45255c7de13fe03b1f0a8458693901'},
 			{image:'linkedin-icon.png', name:'linkedin', link:'https://www.linkedin.com/in/milosrepic/'}
 		];
+
+		for (const socialLink of socialLinks) {
+			const socialLinkElement = document.createElement('DIV');
+			socialLinkElement.classList.add('socialLink');
+			socialLinkElement.innerHTML = '<a target="_blank" href="' + socialLink.link + '">' + socialLink.name  + '</a>';
+			socialLinkElement.style.backgroundImage = 'url("images/' + socialLink.image + '")';
+			startMenuDropDownRightPanel.appendChild(socialLinkElement);
+			//console.log(socialLinkElement.style.backgroundImage);
+			//console.log(socialLink.image);
+		}
 
 		startMenuDropDownPanel.appendChild(this.startMenuDropDownLeftPanel);
 		startMenuDropDownPanel.appendChild(startMenuDropDownRightPanel);
